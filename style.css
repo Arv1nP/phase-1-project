@@ -38,13 +38,16 @@ main #search-section{
     border-radius: 5px;
 }
 
-main #filter-section{
-    float: right;
-    margin: 0 auto;
-    padding: 20px;
+.filterButton {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    align-items: center;
+    margin-bottom: 20px;
 }
-main #results-section{
-    display:block;
-    margin: 0 auto;
-    padding: 20px;
+#results-section {
+    width: 100%;
 }
