@@ -1,9 +1,12 @@
-document.addEventListener("click", () => {
+const searchInput = document.addEventListener("click", () => {
     const searchInput = document.getElementById("searchInput");
-    const searchButton = document.getElementById("searchButton");
-    const filterButton = document.getElementsByClassName(".filterButton");
-    
-    console.log("Search Input:", searchInput);
-    console.log("Search Button:", searchButton);
-    console.log("Filter Buttons:", filterButton);
 });
+
+const search = document.addEventListener("click", () => {
+    const ssearchButton = document.getElementById("searchButton");
+});
+
+const search = document.addEventListener("click", () => {
+    const filterButton = document.getElementsByClassName(".filterButton");
+});
+
