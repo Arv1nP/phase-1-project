@@ -29,6 +29,15 @@ main #search-section{
     border-radius: 5px;
     margin-bottom: 10px;
 }
+.searchButton {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
 main #filter-section{
     float: right;
     margin: 0 auto;
