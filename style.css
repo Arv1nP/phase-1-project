@@ -11,12 +11,23 @@ header {
     padding: 1rem;
 }
 main{
-    display: flex;
-}
-main #search-section{
-    float: left;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+main #search-section{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 main #filter-section{
     float: right;
