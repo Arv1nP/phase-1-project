@@ -10,3 +10,21 @@ header {
     text-align: center;
     padding: 1rem;
 }
+main{
+    display: flex;
+}
+main #search-section{
+    float: left;
+    margin: 0 auto;
+    padding: 20px;
+}
+main #filter-section{
+    float: right;
+    margin: 0 auto;
+    padding: 20px;
+}
+main #results-section{
+    display:block;
+    margin: 0 auto;
+    padding: 20px;
+}
