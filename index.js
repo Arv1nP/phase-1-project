@@ -1,12 +1,13 @@
-const searchInput = document.addEventListener("click", () => {
-    const searchInput = document.getElementById("searchInput");
-});
+const searchInput = document.getElementsByClassName("search-input");
+const searchButton = document.getElementsByClassName("search-button");
+const resultsContainer = document.getElementById("results-section");
 
-const search = document.addEventListener("click", () => {
-    const ssearchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", () => {
+    const userSearch = searchInput.value;
+    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(userSearch)}`;
+    fetch(apiUrl)
+        .then((dataF) => console.log(dataF.json()))
+        .catch((error) => {
+            console.error("Error could not load:", error);
+        });
 });
-
-const search = document.addEventListener("click", () => {
-    const filterButton = document.getElementsByClassName(".filterButton");
-});
-

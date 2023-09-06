@@ -32,12 +32,14 @@ main #search-section{
 .searchButton {
     width: 100%;
     padding: 10px;
-    background-color: #333;
+    background-color: #4173df;
     color: #fff;
     border: none;
     border-radius: 5px;
 }
-
+.searchButton:hover{
+    background-color: rgb(170, 52, 224);
+}
 #filter-section {
     width: 100%;
     display: flex;
