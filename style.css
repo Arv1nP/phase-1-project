@@ -60,3 +60,9 @@ main #search-section{
 #results-section {
     width: 100%;
 }
+#book-list{
+display: flex;
+gap: 10vw;
+list-style: none;
+margin: 10vw
+}

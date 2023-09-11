@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phase 1 project</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script defer src="index.js"></script>
 </head>
 <body>
     <header>
@@ -17,8 +18,9 @@
             <button class="searchButton">Search</button>
          </section>
          <section id="filter-section">
-            <button class="filterButton">Filter</button>
-            <div id="filter-options">
+            <button id="filter-button">Filter</button>
+            <div>
+                <ul id="filter-options"></ul>
             </div>
         </section>
         <section id="results-section">
@@ -27,6 +29,5 @@
             </ul>
         </section>
     </main>
-    <script src="index.js"></script>
 </body>
 </html>
