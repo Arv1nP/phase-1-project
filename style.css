@@ -63,12 +63,15 @@ main #search-section{
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5vh;
     z-index: 1;
 }
 
 .hidden {
     display: none;
+}
+#filter-options{
+    list-style: none;
 }
 #results-section {
     width: 100%;
