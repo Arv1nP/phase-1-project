@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterButton = document.getElementById("filter-button");
     const filterOptions = document.getElementById("filter-options")
 
-    async function fetchResultsThumbnail() {
+    async function fetchResults() {
         const userSearchInput = searchInput.value.toLowerCase();
         const apiLink = `https://www.googleapis.com/books/v1/volumes?q=${userSearchInput}&maxResults=5&key=${googleBooksKey}`;
 
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 throw new Error(`Network had an issue ${Error}`);}
 
             const data = await response.json();
-
             resultsContainer.innerHTML = "";
 
             data.items.forEach((item) => {
@@ -40,42 +39,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 li.appendChild(author);
                 li.appendChild(rating);
                 resultsContainer.appendChild(li)
+                title.classList.add("title")
+               
+                // function filterauthor(){
+                //     const titleElement =document.querySelectorAll(".title");
+                //     const titlesArray = []
+                //     titleElement.forEach(title=>titlesArray.push(tit.textContent))
+
+                // }
+                // filterButton.addEventListener("click",filterauthor)
             });
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     }
 
-    searchButton.addEventListener("click", fetchResultsThumbnail);
+    searchButton.addEventListener("click", fetchResults);
     searchInput.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            fetchResultsThumbnail()}});
+        if (event.key === "Enter") { fetchResults()}});
 
-    async function filterbtn(){
-        const userSearchInput = searchInput.value.toLowerCase()
-        const apiLink = `https://www.googleapis.com/books/v1/volumes?q=${userSearchInput}&maxResults=4&key=${googleBooksKey}`;
-        try{
-            const response = await fetch(apiLink);
-            if (!response.ok){
-                throw new Error(`Network had an issue ${Error}`);}
-
-                const data = await response.json();
-
-                const li1 = document.createElement("li");
-                const li2 = document.createElement("li");
-                const li3 = document.createElement("li");
-
-                const sortyByDate = 1
-                const sortByRating = 2
-                const sortByPages = 3
-                const sortByAZ = 4
-
-    filterButton.addEventListener("click", filterbtn)
-
-
-        }catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
-    
 });
