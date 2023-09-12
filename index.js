@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultsContainer = document.getElementById("book-list");
     const filterButton = document.getElementById("filter-button");
     const filterDropdown = document.getElementById("filter-dropdown");
+    const filterOptions = document.getElementById("Filter-options");
+    const AZBtn = document.querySelector(".A-Z")
+    const rateBtn = document.querySelector(".rate")
+
 
     async function fetchResults() {
         const userSearchInput = searchInput.value.toLowerCase();
@@ -31,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 title.textContent = bookInfo.title;
                 author.textContent = `Author: ${bookInfo.authors ? bookInfo.authors.join(", ") : "Unknown"}`;
-                rating.textContent = `Rating: ${bookInfo.averageRating || "N/A"}`;
+                rating.textContent = `Rating: ${bookInfo.averageRating || "Unknown"}`;
                 thumbnail.src = bookInfo.imageLinks ? bookInfo.imageLinks.thumbnail : "";
 
                 li.appendChild(thumbnail);
@@ -40,33 +44,47 @@ document.addEventListener("DOMContentLoaded", function () {
                 li.appendChild(rating);
                 resultsContainer.appendChild(li)
                 title.classList.add("title")
-               
-                // function filterauthor(){
-                //     const titleElement =document.querySelectorAll(".title");
-                //     const titlesArray = []
-                //     titleElement.forEach(title=>titlesArray.push(tit.textContent))
+                rating.classList.add("rating")
 
-                // }
-                // filterButton.addEventListener("click",filterauthor)
             });
         } catch (error) {
             console.error("Error fetching data:", error);
         }
     }
 
+    function filterAZ() {
+        const titles = document.querySelectorAll(".title");
+        const sortedTitles = Array.from(titles).sort((a, b) => {
+            const title1 = a.textContent.toLowerCase();
+            const title2 = b.textContent.toLowerCase();
+            return title1.localeCompare(title2);
+        });
+        resultsContainer.innerHTML = "";
+        sortedTitles.forEach((titleElement) => {
+            resultsContainer.appendChild(titleElement.parentElement);
+        });
+    }
+
+    function filterRating(){
+        const ratings = document.querySelectorAll(".rating");
+        ratings
+
+    AZBtn.addEventListener("click",filterAZ)
+    rateBtn.addEventListener("click", filterRating())
+
    filterButton.addEventListener("mouseenter", function () {
     filterDropdown.classList.remove("hidden");
 });
 
    filterDropdown.addEventListener("mouseenter", function (){
-    filterDropdown.classList.remove("hidden")
+    filterDropdown.classList.remove("hidden");
    })
 
-filterButton.addEventListener("mouseleave", function () {
+   filterButton.addEventListener("mouseleave", function () {
     filterDropdown.classList.add("hidden");
 });
 
-filterDropdown.addEventListener("mouseleave", function () {
+   filterDropdown.addEventListener("mouseleave", function () {
     filterDropdown.classList.add("hidden");
 });
 
