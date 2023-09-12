@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchButton = document.querySelector(".searchButton");
     const resultsContainer = document.getElementById("book-list");
     const filterButton = document.getElementById("filter-button");
-    const filterOptions = document.getElementById("filter-options")
+    const filterDropdown = document.getElementById("filter-dropdown");
 
     async function fetchResults() {
         const userSearchInput = searchInput.value.toLowerCase();
@@ -54,6 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+   filterButton.addEventListener("mouseenter", function () {
+    filterDropdown.classList.remove("hidden");
+});
+
+filterButton.addEventListener("mouseleave", function () {
+    filterDropdown.classList.add("hidden");
+});
     searchButton.addEventListener("click", fetchResults);
     searchInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") { fetchResults()}});

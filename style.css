@@ -57,6 +57,19 @@ main #search-section{
     align-items: center;
     margin-bottom: 20px;
 }
+
+#filter-dropdown {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.hidden {
+    display: none;
+}
 #results-section {
     width: 100%;
 }
