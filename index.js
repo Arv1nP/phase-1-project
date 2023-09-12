@@ -58,9 +58,18 @@ document.addEventListener("DOMContentLoaded", function () {
     filterDropdown.classList.remove("hidden");
 });
 
+   filterDropdown.addEventListener("mouseenter", function (){
+    filterDropdown.classList.remove("hidden")
+   })
+
 filterButton.addEventListener("mouseleave", function () {
     filterDropdown.classList.add("hidden");
 });
+
+filterDropdown.addEventListener("mouseleave", function () {
+    filterDropdown.classList.add("hidden");
+});
+
     searchButton.addEventListener("click", fetchResults);
     searchInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") { fetchResults()}});
