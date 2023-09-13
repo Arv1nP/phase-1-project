@@ -65,25 +65,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // function filterRating(){
-    //     const ratings = document.querySelectorAll(".rating");
-    //     const ratingVal = ratings.textContent.parseFloat()
-    //     const sortedRatings = Array.from(ratingVal).sort()
-    //     const string = ""
-    //     const sus = string.concat(sortedRatings)
-    //     resultsContainer.innerHTML = "";
-    //     sus.forEach((rateElement) => {
-    //         resultsContainer.appendChild(rateElement.parentElement);
-    //     });
-    // }
-
     function filterRating() {
         const ratingMax = "5"
         const ratingMin = "0.4"
         const ratingLi = document.querySelectorAll(".rating");
-        const ratings = Array.from(ratingLi).map((str) => parseFloat(str.textContent.trim()))
-        
-        console.log(ratings);
+        const ratings = Array.from(ratingLi).map((element) => {
+            const textContent = element.textContent.slice(8);
+            const numericValue = parseFloat(textContent);        
+            return isNaN(numericValue) ? "N/A" : numericValue;
+        });
+        const sortedRatings = ratings.sort((a, b) => a - b)
+        const finalRatings = sortedRatings.map((rating) => `Rating: ${rating}`)
+        resultsContainer.innerHTML = "";
+        finalRatings.forEach((rating) => {
+            const li = document.createElement("li"); 
+            li.textContent = rating;
+            resultsContainer.appendChild(li);
+        });
     }
     
     rateBtn.addEventListener("click", filterRating);
