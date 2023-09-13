@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterOptions = document.getElementById("Filter-options");
     const AZBtn = document.querySelector(".A-Z")
     const rateBtn = document.querySelector(".rate")
-
+    let data = "hello world"
 
     async function fetchResults() {
         const userSearchInput = searchInput.value.toLowerCase();
@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!response.ok) {
                 throw new Error(`Network had an issue ${Error}`);}
 
-            const data = await response.json();
+            data = await response.json();
             resultsContainer.innerHTML = "";
+            console.log(data)
 
             data.items.forEach((item) => {
                 const bookInfo = item.volumeInfo;
@@ -66,22 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function filterRating() {
-        const ratingMax = "5"
-        const ratingMin = "0.4"
-        const ratingLi = document.querySelectorAll(".rating");
-        const ratings = Array.from(ratingLi).map((element) => {
-            const textContent = element.textContent.slice(8);
-            const numericValue = parseFloat(textContent);        
-            return isNaN(numericValue) ? "N/A" : numericValue;
-        });
-        const sortedRatings = ratings.sort((a, b) => a - b)
-        const finalRatings = sortedRatings.map((rating) => `Rating: ${rating}`)
+
+        let ratingLi = document.querySelectorAll(".rating");
+        const ratings = Array.from(ratingLi).sort((a,b)=>{
+            const rating1 = a.textContent;
+            const rating2 = b.textContent;
+            return rating1.localeCompare(rating2,{numeric: true}).reverse()}
+        )
         resultsContainer.innerHTML = "";
-        finalRatings.forEach((rating) => {
-            const li = document.createElement("li"); 
-            li.textContent = rating;
-            resultsContainer.appendChild(li);
-        });
+
+       ratings.forEach((rating) => {
+        resultsContainer.appendChild(rating.parentElement)
+     });
     }
     
     rateBtn.addEventListener("click", filterRating);
