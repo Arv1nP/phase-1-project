@@ -80,13 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function filterRating() {
         const ratingMax = "5"
         const ratingMin = "0.4"
-        const ratingElements = document.querySelectorAll(".rating");
-        const numericElements = Array.from(ratingElements).filter((element) => {
-            const textContent = element.textContent.trim();
-            return parseFloat(textContent);
-        });
+        const ratingLi = document.querySelectorAll(".rating");
+        const ratings = Array.from(ratingLi).map((str) => parseFloat(str.textContent.trim()))
         
-        console.log(numericElements);
+        console.log(ratings);
     }
     
     rateBtn.addEventListener("click", filterRating);
