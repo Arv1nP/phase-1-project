@@ -65,12 +65,35 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function filterRating(){
-        const ratings = document.querySelectorAll(".rating");
-        ratings
+    // function filterRating(){
+    //     const ratings = document.querySelectorAll(".rating");
+    //     const ratingVal = ratings.textContent.parseFloat()
+    //     const sortedRatings = Array.from(ratingVal).sort()
+    //     const string = ""
+    //     const sus = string.concat(sortedRatings)
+    //     resultsContainer.innerHTML = "";
+    //     sus.forEach((rateElement) => {
+    //         resultsContainer.appendChild(rateElement.parentElement);
+    //     });
+    // }
+
+    function filterRating() {
+        const ratingMax = "5"
+        const ratingMin = "0.4"
+        const ratingElements = document.querySelectorAll(".rating");
+        const numericElements = Array.from(ratingElements).filter((element) => {
+            const textContent = element.textContent.trim();
+            return parseFloat(textContent);
+        });
+        
+        console.log(numericElements);
+    }
+    
+    rateBtn.addEventListener("click", filterRating);
 
     AZBtn.addEventListener("click",filterAZ)
-    rateBtn.addEventListener("click", filterRating())
+
+    rateBtn.addEventListener("click", filterRating)
 
    filterButton.addEventListener("mouseenter", function () {
     filterDropdown.classList.remove("hidden");
