@@ -71,25 +71,50 @@ main {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    margin: 10px;
+    margin-top: 30px;
 }
 
 #filter-dropdown {
     position: absolute;
     background-color: #fff;
-    border: 1px solid #f30c0c;
+    border: 1px solid #464646;
     border-radius: 5px;
     padding: 1vh;
     z-index: 1;
 }
 
-#filter-options {
+/* #filter-options {
     list-style: none;
-}
+} */
 
 /* Hide elements with the "hidden" class */
 .hidden {
     display: none;
+}
+#filter-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#filter-options li {
+    margin-bottom: 10px;
+}
+
+#filter-options button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#filter-options button:hover {
+    background-color: #4173df;
+    color: #fff;
 }
 
 /* Style the results section */
@@ -99,14 +124,28 @@ main {
 
 #book-list {
     display: flex;
-    gap: 10vw;
+    gap: 5vw;
     list-style: none;
-    margin: 10vw;
+    margin: 5rem;
+    justify-content: flex-start;
 }
 
 #book-list li{
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 20px;
+    width:20%;
+    min-width: 200px;
+    padding: 1.5rem 6px;
+    border-block: groove;
+    border-block-width: 0.3rem;
+    border-block-color: #4173df;
+    text-align: center;
+}
+
+#book-list li:hover{
+    border-inline: groove;
+    border-inline-width: 2px;
+    border-inline-color: rgb(170, 52, 224);
+}
+
+#book-list li .title{
+    margin:3px
 }
