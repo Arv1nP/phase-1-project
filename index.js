@@ -1,5 +1,3 @@
-//DOMContentLoaded
-document.addEventListener("DOMContentLoaded", function () {
     const googleBooksKey = "AIzaSyB80K-o0NisdXXsA9BUG5ZrwUFar3eYeuU";
 
     const searchInput = document.querySelector(".search-input");
@@ -11,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const AZBtn = document.querySelector(".A-Z")
     const rateBtn = document.querySelector(".rate")
     let data = "hello world"
+    const resetButton = document.querySelector(".reset")
 
     async function fetchResults() {
         const userSearchInput = searchInput.value.toLowerCase();
@@ -72,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const ratings = Array.from(ratingLi).sort((a,b)=>{
             const rating1 = a.textContent;
             const rating2 = b.textContent;
-            return rating1.localeCompare(rating2,{numeric: true}).reverse()}
-        )
+            return rating1.localeCompare(rating2,{numeric: true})});
+        const ratingsF = ratings.reverse()
         resultsContainer.innerHTML = "";
 
-       ratings.forEach((rating) => {
+       ratingsF.forEach((rating) => {
         resultsContainer.appendChild(rating.parentElement)
      });
     }
@@ -106,5 +105,5 @@ document.addEventListener("DOMContentLoaded", function () {
     searchButton.addEventListener("click", fetchResults);
     searchInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") { fetchResults()}});
-
-});
+    
+    resetButton.addEventListener("click",fetchResults)
