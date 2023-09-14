@@ -82,12 +82,21 @@
         resultsContainer.appendChild(rating.parentElement)
      });
     }
+
+    function showSearchResults() {
+        const resultPrompt = document.getElementById("result-promt");
+        const quote = document.getElementById("quote");
+        resultPrompt.style.display = "block";
+        quote.style.display = "none";
+    }
+
+
     
     rateBtn.addEventListener("click", filterRating);
 
     AZBtn.addEventListener("click",filterAZ)
 
-    rateBtn.addEventListener("click", filterRating)
+    resetButton.addEventListener("click", fetchResults)
 
    filterButton.addEventListener("mouseenter", function () {
     filterDropdown.classList.remove("hidden");
@@ -106,7 +115,15 @@
 });
 
     searchButton.addEventListener("click", fetchResults);
+    
     searchInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") { fetchResults()}});
     
-    resetButton.addEventListener("click",fetchResults)
+    searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") { showSearchResults()}});
+
+    searchButton.addEventListener("click", showSearchResults)
+
+    
+    
+    

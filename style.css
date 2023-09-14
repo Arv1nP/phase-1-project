@@ -56,6 +56,15 @@ main {
     background-color: rgb(170, 52, 224);
 }
 
+.hidden1{
+    display:none;
+}
+.hidden2{
+    margin: 5rem;
+    text-align: center;
+    padding-top: 4rem;
+}
+
 /* Style the filter section */
 #filter-section {
     width: 100%;
