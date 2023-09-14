@@ -4,7 +4,7 @@ This is a simple web application for searching books and authors. Users can inpu
 
 ## Demo
 
-You can view a live demo of the application here: [Demo Link](https://example.com)
+You can view a live demo of the application here: [Demo Link](https://arv1np.github.io/phase-1-project/)
 
 ## Features
 
@@ -30,7 +30,7 @@ Follow these instructions to set up and run the project locally on your machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-project.git
+   git clone https://arv1np.github.io/phase-1-project/
 
 ## Credits
 
