@@ -86,8 +86,10 @@
     function showSearchResults() {
         const resultPrompt = document.getElementById("result-promt");
         const quote = document.getElementById("quote");
+        const image = document.getElementById("img")
         resultPrompt.style.display = "block";
         quote.style.display = "none";
+        image.style.display= "none";
     }
 
 

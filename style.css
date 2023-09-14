@@ -46,6 +46,12 @@ main {
   100% { color: #ff5733; }
 }
 
+#img{
+    max-width: 10rem;
+    margin: 0;
+    padding: 0;
+}
+
 .search-input {
     width: 100%;
     padding: 10px;
@@ -141,6 +147,7 @@ main {
 /* Style the results section */
 #results-section {
     width: 100%;
+    text-align: center;
 }
 
 #book-list {
@@ -170,3 +177,12 @@ main {
 #book-list li .title{
     margin:3px
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color:  #333;
+    padding: 10px 0;
+  }
