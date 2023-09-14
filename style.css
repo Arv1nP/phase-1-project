@@ -4,24 +4,36 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Style the header */
 header {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 1rem;
 }
-main{
-    max-width: 100vw;
+
+.title-text {
+    font-style: italic;
+}
+
+/* Style the main content area */
+main {
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center content horizontally */
 }
-main #search-section{
+
+/* Style the search section */
+#search-section {
     width: 100%;
     padding-bottom: 20px;
+    text-align: center; /* Center content horizontally */
 }
+
 .search-input {
     width: 100%;
     padding: 10px;
@@ -29,6 +41,7 @@ main #search-section{
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
 .searchButton {
     width: 100%;
     padding: 10px;
@@ -36,49 +49,64 @@ main #search-section{
     color: #fff;
     border: none;
     border-radius: 5px;
+    cursor: pointer; /* Add pointer cursor on hover */
 }
-.searchButton:hover{
+
+.searchButton:hover {
     background-color: rgb(170, 52, 224);
 }
+
+/* Style the filter section */
 #filter-section {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 3vh;
 }
-.filterButton {
+
+#filter-button {
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     margin: 10px;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
 #filter-dropdown {
     position: absolute;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #f30c0c;
     border-radius: 5px;
-    padding: 5vh;
+    padding: 1vh;
     z-index: 1;
 }
 
+#filter-options {
+    list-style: none;
+}
+
+/* Hide elements with the "hidden" class */
 .hidden {
     display: none;
 }
-#filter-options{
-    list-style: none;
-}
+
+/* Style the results section */
 #results-section {
     width: 100%;
 }
-#book-list{
-display: flex;
-gap: 10vw;
-list-style: none;
-margin: 10vw
+
+#book-list {
+    display: flex;
+    gap: 10vw;
+    list-style: none;
+    margin: 10vw;
+}
+
+#book-list li{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
 }

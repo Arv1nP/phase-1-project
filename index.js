@@ -27,6 +27,8 @@
             data.items.forEach((item) => {
                 const bookInfo = item.volumeInfo;
 
+                // const resultContainer = document.createElement("div");
+                // resultContainer.classList.add("result-container");
                 const li = document.createElement("li");
                 const title = document.createElement("h3");
                 const author = document.createElement("p");
@@ -45,6 +47,7 @@
                 resultsContainer.appendChild(li)
                 title.classList.add("title")
                 rating.classList.add("rating")
+                // resultsContainer.appendChild(resultContainer);
 
             });
         } catch (error) {
