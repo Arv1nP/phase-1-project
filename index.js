@@ -17,8 +17,6 @@
 
         try {
             const response = await fetch(apiLink);
-            if (!response.ok) {
-                throw new Error(`Network had an issue ${Error}`);}
 
             data = await response.json();
             resultsContainer.innerHTML = "";
@@ -27,8 +25,6 @@
             data.items.forEach((item) => {
                 const bookInfo = item.volumeInfo;
 
-                // const resultContainer = document.createElement("div");
-                // resultContainer.classList.add("result-container");
                 const li = document.createElement("li");
                 const title = document.createElement("h3");
                 const author = document.createElement("p");
@@ -47,7 +43,6 @@
                 resultsContainer.appendChild(li)
                 title.classList.add("title")
                 rating.classList.add("rating")
-                // resultsContainer.appendChild(resultContainer);
 
             });
         } catch (error) {
@@ -72,9 +67,9 @@
 
         let ratingLi = document.querySelectorAll(".rating");
         const ratings = Array.from(ratingLi).sort((a,b)=>{
-            const rating1 = a.textContent;
-            const rating2 = b.textContent;
-            return rating1.localeCompare(rating2,{numeric: true})});
+        const rating1 = a.textContent;
+        const rating2 = b.textContent;
+        return rating1.localeCompare(rating2,{numeric: true})});
         const ratingsF = ratings.reverse()
         resultsContainer.innerHTML = "";
 

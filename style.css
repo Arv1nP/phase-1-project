@@ -5,7 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Style the header */
+
 header {
     background-color: #333;
     color: #fff;
@@ -17,30 +17,30 @@ header {
     font-style: italic;
 }
 
-/* Style the main content area */
+
 main {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center; 
 }
 
-/* Style the search section */
+
 #search-section {
     width: 100%;
     padding-bottom: 20px;
-    text-align: center; /* Center content horizontally */
+    text-align: center; 
 }
 #search-section h2{
     float: left;
     padding-block: 0.5rem;
     padding-inline-start: 1rem;
-    animation: colorChange 4s infinite;
+    animation: mango 4s infinite;
 }
 
-@keyframes colorChange {
+@keyframes mango {
   0% { color: #ff5733; }
   50% { color: #ff1493; }
   100% { color: #ff5733; }
@@ -83,7 +83,6 @@ main {
     padding-top: 4rem;
 }
 
-/* Style the filter section */
 #filter-section {
     width: 100%;
     display: flex;
@@ -110,11 +109,7 @@ main {
     z-index: 1;
 }
 
-/* #filter-options {
-    list-style: none;
-} */
 
-/* Hide elements with the "hidden" class */
 .hidden {
     display: none;
 }
@@ -143,7 +138,6 @@ main {
     background-color: #4173df;
 }
 
-/* Style the results section */
 #results-section {
     width: 100%;
     text-align: center;
